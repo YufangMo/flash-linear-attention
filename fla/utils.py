@@ -47,17 +47,17 @@ def tensor_cache(
 
     @functools.wraps(fn)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
-        nonlocal last_key, last_result
+        # nonlocal last_key, last_result
 
-        # Convert all tensor arguments to a single hash key
-        key = tuple(arg.data_ptr() for arg in args if torch.is_tensor(arg))
-        key += tuple((k, v.data_ptr()) for k, v in kwargs.items() if torch.is_tensor(v))
+        # # Convert all tensor arguments to a single hash key
+        # key = tuple(arg.data_ptr() for arg in args if torch.is_tensor(arg))
+        # key += tuple((k, v.data_ptr()) for k, v in kwargs.items() if torch.is_tensor(v))
 
-        if key == last_key and last_result is not None:
-            return last_result
+        # if key == last_key and last_result is not None:
+        #     return last_result
 
         result = fn(*args, **kwargs)
-        last_key, last_result = key, result
+        # last_key, last_result = key, result
         return result
 
     return wrapper
