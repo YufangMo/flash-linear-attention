@@ -76,7 +76,7 @@ The following requirements should be satisfied
 As `fla` is actively developed now, no released packages are provided at this time.
 If you do need to use `fla` ops/modules and contemplate further explorations, an alternative way is to install the package from source
 ```sh
-pip install -U git+https://github.com/fla-org/flash-linear-attention
+pip install -U git+https://github.com/YufangMo/flash-linear-attention
 ```
 or manage `fla` with submodules
 ```sh
